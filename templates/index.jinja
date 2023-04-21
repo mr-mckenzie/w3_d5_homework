@@ -8,10 +8,13 @@
 </head>
 <body>
 
+<a href="/library">Library</a>
+
 <p>our books are:</p>
-    {% for book in library_books %}
+    {% for book in library_book_list %}
 
     <p>{{ book.title }} by {{ book.author }}, {{ book.genre }}</p>
+    <a href="/library/{{book.title}}">Tell me more!!</a>
 
     {% endfor %}
 </body>
