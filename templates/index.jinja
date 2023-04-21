@@ -9,10 +9,10 @@
 <body>
 
 <p>our books are:</p>
-    {{for book in Library}}
+    {% for book in library_books %}
 
     <p>{{ book.title }} by {{ book.author }}, {{ book.genre }}</p>
 
-    {{ endfor }}
+    {% endfor %}
 </body>
 </html>
