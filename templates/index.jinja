@@ -17,5 +17,15 @@
     <a href="/library/{{book.title}}">Tell me more!!</a>
 
     {% endfor %}
+
+    <form action="/library" method="post">
+        <label for="title-box">Title</label>
+        <input name="title" id="title-box">
+        <label for="author-box">Author</label>
+        <input name="author" id="author-box">
+        <label for="genre-box">Genre</label>
+        <input name="genre" id="genre-box">
+        <input type="submit" value="Add Book to Library">
+    </form>
 </body>
 </html>
