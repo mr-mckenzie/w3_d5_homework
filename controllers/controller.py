@@ -27,3 +27,14 @@ def add_book():
     books_in_library.append(new_book)
 
     return render_template('index.jinja', library_book_list = books_in_library)
+
+@app.route('/library/remove', methods=['POST'])
+def remove_book():
+    book_title_to_remove = request.form['title']
+    print(book_title_to_remove)
+
+    for book in books_in_library:
+        if book.title == book_title_to_remove:
+            books_in_library.remove(book)
+
+    return render_template('index.jinja', library_book_list = books_in_library)

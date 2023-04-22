@@ -27,5 +27,16 @@
         <input name="genre" id="genre-box">
         <input type="submit" value="Add Book to Library">
     </form>
+
+    <form action="/library/remove" method="post">
+        <label for="select-box">Remove a book:</label>
+        <select name="title" id="select-box">
+        <option value = "">-- choose a book to remove --</option>
+        {% for book in library_book_list %}
+        <option value="{{book.title}}">{{book.title}}</option>
+        {% endfor %}
+        </select>
+       <input type="submit" value="Remove Book from Library">
+    </form>
 </body>
 </html>
