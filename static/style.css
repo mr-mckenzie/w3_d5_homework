@@ -1,0 +1,13 @@
+.book_box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.book {
+    margin: 10px;
+    background-color: ghostwhite;
+    text-align: center;
+    width: 200px;
+    border: 2px darkslateblue solid;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library {{ single_book.title }}</title>
+</head>
+<body>
+
+<a href="/library"><< Back</a>
+
+    <p>Title: {{ single_book.title }} </p>
+    <p>Author: {{ single_book.author }} </p>
+    <p>Genre: {{ single_book.genre }} </p>
+    <p>Checked Out? {{single_book.checked_out}}</p>
+
+</body>
+</html>

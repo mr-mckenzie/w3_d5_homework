@@ -3,3 +3,4 @@ class Book:
         self.title = input_title
         self.author = input_author
         self.genre = input_genre
+        self.checked_out = False

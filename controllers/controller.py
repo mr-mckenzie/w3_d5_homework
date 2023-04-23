@@ -9,13 +9,13 @@ def index():
     return render_template('index.jinja', library_book_list = books_in_library)
 
 @app.route('/library/<title>')
-def individual_book(title):
-    chosen_book = []
+def single_book(title):
+
     for book in books_in_library:
         if book.title == title:
-            chosen_book.append(book)
+            book_to_display = book
     
-    return render_template('index.jinja', library_book_list = chosen_book)
+    return render_template('single_book_display.jinja', single_book = book_to_display)
 
 @app.route('/library', methods=['POST'])
 def add_book():

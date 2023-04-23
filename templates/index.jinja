@@ -5,19 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<a href="/library">Library</a>
+<h1>Library</h1>
 
-<p>our books are:</p>
+<article>
+    <h2>Our catalogue</h2>
+
+    <div class="book_box">
     {% for book in library_book_list %}
-
-    <p>{{ book.title }} by {{ book.author }}, {{ book.genre }}</p>
-    <a href="/library/{{book.title}}">Tell me more!!</a>
+    <div class="book">
+        <p>{{ book.title }} <br>by {{ book.author }}</p>
+        <a href="/library/{{book.title}}">See details</a>
+    </div>
 
     {% endfor %}
+    </div>
+</article>
 
+<h2>Donate a Book</h2>
     <form action="/library" method="post">
         <label for="title-box">Title</label>
         <input name="title" id="title-box">
@@ -25,9 +33,10 @@
         <input name="author" id="author-box">
         <label for="genre-box">Genre</label>
         <input name="genre" id="genre-box">
-        <input type="submit" value="Add Book to Library">
+        <input type="submit" value="Add Book">
     </form>
 
+<h2>Remove a Book</h2>
     <form action="/library/remove" method="post">
         <label for="select-box">Remove a book:</label>
         <select name="title" id="select-box">
@@ -36,7 +45,7 @@
         <option value="{{book.title}}">{{book.title}}</option>
         {% endfor %}
         </select>
-       <input type="submit" value="Remove Book from Library">
+       <input type="submit" value="Remove Book">
     </form>
 </body>
 </html>
